@@ -44,18 +44,26 @@
 
                 <!-- Desktop -->
                 <div class="hidden md:flex space-x-6 items-center">
-                    <a class="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition font-mono" href="#stack">STACK</a>
-                    <a class="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition font-mono" href="#projects">PROJETS</a>
-                    <a class="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition font-mono" href="#certifications">CERTIFS</a>
-                    <a class="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition font-mono" href="#contact">CONTACT</a>
+                    <a class="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition font-mono" href="#stack" data-i18n="nav_stack">STACK</a>
+                    <a class="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition font-mono" href="#projects" data-i18n="nav_projects">PROJETS</a>
+                    <a class="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition font-mono" href="#certifications" data-i18n="nav_certs">CERTIFS</a>
+                    <a class="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition font-mono" href="#contact" data-i18n="nav_contact">CONTACT</a>
+                    <button id="langToggle" class="flex items-center gap-1 px-2 py-1.5 text-xs font-mono font-bold rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 transition" onclick="toggleLang()">
+                        <span class="material-symbols-outlined text-[16px]">translate</span>
+                        <span id="langLabel">EN</span>
+                    </button>
                     <button aria-label="Toggle dark mode" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 transition" onclick="toggleDarkMode()">
                         <span id="darkModeIcon" class="material-symbols-outlined text-[20px]">light_mode</span>
                     </button>
-                    <a class="px-5 py-2 text-sm font-bold text-white bg-gray-900 hover:bg-primary dark:bg-white dark:text-gray-900 dark:hover:bg-primary dark:hover:text-white rounded-lg transition-all duration-300 font-mono" href="#contact">Me Recruter</a>
+                    <a class="px-5 py-2 text-sm font-bold text-white bg-gray-900 hover:bg-primary dark:bg-white dark:text-gray-900 dark:hover:bg-primary dark:hover:text-white rounded-lg transition-all duration-300 font-mono" href="#contact" data-i18n="nav_hire">Me Recruter</a>
                 </div>
 
                 <!-- Mobile -->
                 <div class="md:hidden flex items-center gap-2">
+                    <button id="langToggleMobile" class="flex items-center gap-1 px-2 py-1.5 text-xs font-mono font-bold rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 transition" onclick="toggleLang()">
+                        <span class="material-symbols-outlined text-[16px]">translate</span>
+                        <span id="langLabelMobile">EN</span>
+                    </button>
                     <button class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400" onclick="toggleDarkMode()">
                         <span class="material-symbols-outlined">dark_mode</span>
                     </button>
@@ -68,11 +76,11 @@
             <!-- Mobile Menu -->
             <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-gray-100 dark:border-gray-800 mt-2">
                 <div class="flex flex-col space-y-3 pt-4">
-                    <a class="text-sm font-medium text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition font-mono px-2 py-1" href="#stack" onclick="closeMobileMenu()">STACK</a>
-                    <a class="text-sm font-medium text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition font-mono px-2 py-1" href="#projects" onclick="closeMobileMenu()">PROJETS</a>
-                    <a class="text-sm font-medium text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition font-mono px-2 py-1" href="#certifications" onclick="closeMobileMenu()">CERTIFS</a>
-                    <a class="text-sm font-medium text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition font-mono px-2 py-1" href="#contact" onclick="closeMobileMenu()">CONTACT</a>
-                    <a class="mx-2 px-5 py-2.5 text-sm font-bold text-white bg-gray-900 hover:bg-primary dark:bg-white dark:text-gray-900 rounded-lg transition font-mono text-center" href="#contact" onclick="closeMobileMenu()">Me Recruter</a>
+                    <a class="text-sm font-medium text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition font-mono px-2 py-1" href="#stack" onclick="closeMobileMenu()" data-i18n="nav_stack">STACK</a>
+                    <a class="text-sm font-medium text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition font-mono px-2 py-1" href="#projects" onclick="closeMobileMenu()" data-i18n="nav_projects">PROJETS</a>
+                    <a class="text-sm font-medium text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition font-mono px-2 py-1" href="#certifications" onclick="closeMobileMenu()" data-i18n="nav_certs">CERTIFS</a>
+                    <a class="text-sm font-medium text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition font-mono px-2 py-1" href="#contact" onclick="closeMobileMenu()" data-i18n="nav_contact">CONTACT</a>
+                    <a class="mx-2 px-5 py-2.5 text-sm font-bold text-white bg-gray-900 hover:bg-primary dark:bg-white dark:text-gray-900 rounded-lg transition font-mono text-center" href="#contact" onclick="closeMobileMenu()" data-i18n="nav_hire">Me Recruter</a>
                 </div>
             </div>
         </div>
@@ -89,42 +97,42 @@
                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                         </span>
-                        <span class="font-semibold uppercase tracking-wider">Open to Work</span>
+                        <span class="font-semibold uppercase tracking-wider" data-i18n="hero_badge">Open to Work</span>
                     </div>
 
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
-                        Full Stack <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500">Cloud & DevOps</span> Engineer.
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight" data-i18n="hero_title">
+                        Full Stack <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500" data-i18n-html="hero_title_accent">Cloud & DevOps</span> Engineer.
                     </h1>
 
-                    <p class="text-base sm:text-lg text-gray-500 dark:text-gray-400 max-w-lg leading-relaxed">
-                        Je conçois des infrastructures cloud scalables, automatise les deploiements et developpe des applications web performantes. Specialise en <strong class="text-gray-700 dark:text-gray-200">AWS, Docker, Kubernetes, Python, Next.js & Laravel</strong>.
+                    <p class="text-base sm:text-lg text-gray-500 dark:text-gray-400 max-w-lg leading-relaxed" data-i18n="hero_desc">
+                        Je conçois des infrastructures cloud scalables, automatise les deploiements et developpe des applications web performantes. Specialise en <strong class="text-gray-700 dark:text-gray-200">AWS, Docker, Kubernetes, Python, Next.js &amp; Laravel</strong>.
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                        <a class="inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-white bg-primary rounded-lg shadow-lg hover:bg-primary-dark hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 font-mono" href="#projects">
+                        <a class="inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-white bg-primary rounded-lg shadow-lg hover:bg-primary-dark hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 font-mono" href="#projects" data-i18n="hero_btn_projects">
                             Voir les Projets
                             <span class="material-symbols-outlined ml-2 text-base">arrow_forward</span>
                         </a>
                         <a class="inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-gray-700 dark:text-white bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 font-mono" href="#contact">
                             <span class="material-symbols-outlined mr-2 text-base">mail</span>
-                            Me Contacter
+                            <span data-i18n="hero_btn_contact">Me Contacter</span>
                         </a>
                     </div>
 
                     <div class="pt-4 flex flex-wrap items-center gap-5 text-gray-400 dark:text-gray-500 border-t border-gray-200 dark:border-gray-800">
                         <div class="flex items-center gap-2">
                             <span class="material-symbols-outlined text-indigo-400 text-lg">cloud</span>
-                            <span class="text-sm font-mono text-gray-700 dark:text-gray-300 font-semibold">Cloud & DevOps</span>
+                            <span class="text-sm font-mono text-gray-700 dark:text-gray-300 font-semibold" data-i18n="stat_cloud">Cloud & DevOps</span>
                         </div>
                         <div class="w-px h-4 bg-gray-200 dark:bg-gray-700"></div>
                         <div class="flex items-center gap-2">
                             <span class="material-symbols-outlined text-gray-900 dark:text-white text-lg">code</span>
-                            <span class="text-sm font-mono text-gray-700 dark:text-gray-300 font-semibold">3+ Ans Full Stack</span>
+                            <span class="text-sm font-mono text-gray-700 dark:text-gray-300 font-semibold" data-i18n="stat_exp">3+ Ans Full Stack</span>
                         </div>
                         <div class="w-px h-4 bg-gray-200 dark:bg-gray-700"></div>
                         <div class="flex items-center gap-2">
                             <span class="material-symbols-outlined text-emerald-400 text-lg">verified</span>
-                            <span class="text-sm font-mono text-gray-700 dark:text-gray-300 font-semibold">6 Certifications</span>
+                            <span class="text-sm font-mono text-gray-700 dark:text-gray-300 font-semibold" data-i18n="stat_certs">6 Certifications</span>
                         </div>
                     </div>
                 </div>
@@ -153,8 +161,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-14">
                 <span class="text-primary font-mono font-bold tracking-wider uppercase text-sm mb-2 block">&lt; Stack /&gt;</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">Technologies <span class="text-primary italic">maitrisees.</span></h2>
-                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">Mon ecosysteme technique pour concevoir des architectures cloud, des applications full stack et des systemes intelligents.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">Technologies <span class="text-primary italic" data-i18n="stack_title_accent">maitrisees.</span></h2>
+                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto" data-i18n="stack_desc">Mon ecosysteme technique pour concevoir des architectures cloud, des applications full stack et des systemes intelligents.</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -166,7 +174,7 @@
                     </div>
                     <div>
                         <h3 class="text-base font-bold text-gray-900 dark:text-white font-mono">Cloud & DevOps</h3>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">Infrastructure AWS, Docker, Kubernetes, Terraform, CI/CD automatises.</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed" data-i18n="stack_cloud_desc">Infrastructure AWS, Docker, Kubernetes, Terraform, CI/CD automatises.</p>
                     </div>
                     <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100 dark:border-gray-800">
                         <span class="text-[10px] font-mono px-2 py-0.5 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-500 dark:text-indigo-300 rounded">AWS</span>
@@ -184,8 +192,8 @@
                         <div class="w-11 h-11 bg-blue-500/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-blue-500 text-xl">code</span></div>
                     </div>
                     <div>
-                        <h3 class="text-base font-bold text-gray-900 dark:text-white font-mono">Full Stack & Mobile</h3>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">Applications web reactives et mobiles avec Next.js, Laravel et Node.js.</p>
+                        <h3 class="text-base font-bold text-gray-900 dark:text-white font-mono" data-i18n="stack_fs_title">Full Stack & Mobile</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed" data-i18n="stack_fs_desc">Applications web reactives et mobiles avec Next.js, Laravel et Node.js.</p>
                     </div>
                     <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100 dark:border-gray-800">
                         <span class="text-[10px] font-mono px-2 py-0.5 bg-blue-50 dark:bg-blue-900/20 text-blue-500 dark:text-blue-300 rounded">Next.js</span>
@@ -203,8 +211,8 @@
                         <div class="w-11 h-11 bg-emerald-500/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-emerald-500 text-xl">terminal</span></div>
                     </div>
                     <div>
-                        <h3 class="text-base font-bold text-gray-900 dark:text-white font-mono">Langages & Data</h3>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">Python avance, TypeScript, SQL, Bash et bases de donnees.</p>
+                        <h3 class="text-base font-bold text-gray-900 dark:text-white font-mono" data-i18n="stack_lang_title">Langages & Data</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed" data-i18n="stack_lang_desc">Python avance, TypeScript, SQL, Bash et bases de donnees.</p>
                     </div>
                     <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100 dark:border-gray-800">
                         <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-500 dark:text-emerald-300 rounded">Python</span>
@@ -223,8 +231,8 @@
                         <div class="w-11 h-11 bg-purple-500/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-purple-500 text-xl">psychology</span></div>
                     </div>
                     <div>
-                        <h3 class="text-base font-bold text-gray-900 dark:text-white font-mono">IA & Data</h3>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">Deep Learning, agents autonomes, RAG et deploiement LLM.</p>
+                        <h3 class="text-base font-bold text-gray-900 dark:text-white font-mono" data-i18n="stack_ai_title">IA & Data</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed" data-i18n="stack_ai_desc">Deep Learning, agents autonomes, RAG et deploiement LLM.</p>
                     </div>
                     <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100 dark:border-gray-800">
                         <span class="text-[10px] font-mono px-2 py-0.5 bg-purple-50 dark:bg-purple-900/20 text-purple-500 dark:text-purple-300 rounded">PyTorch</span>
@@ -241,8 +249,8 @@
                         <div class="w-11 h-11 bg-amber-500/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-amber-500 text-xl">build</span></div>
                     </div>
                     <div>
-                        <h3 class="text-base font-bold text-gray-900 dark:text-white font-mono">Outils & Design</h3>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">Git, Figma, Postman, CI/CD et outils de productivite.</p>
+                        <h3 class="text-base font-bold text-gray-900 dark:text-white font-mono" data-i18n="stack_tools_title">Outils & Design</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed" data-i18n="stack_tools_desc">Git, Figma, Postman, CI/CD et outils de productivite.</p>
                     </div>
                     <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100 dark:border-gray-800">
                         <span class="text-[10px] font-mono px-2 py-0.5 bg-amber-50 dark:bg-amber-900/20 text-amber-500 dark:text-amber-300 rounded">Git & GitHub</span>
@@ -280,11 +288,11 @@
             <div class="flex flex-col md:flex-row justify-between items-end mb-14">
                 <div class="max-w-xl">
                     <span class="text-primary font-mono font-bold tracking-wider uppercase text-sm mb-2 block">&lt; Projets /&gt;</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">Projets <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-500 italic">selectionnes.</span></h2>
-                    <p class="text-gray-500 dark:text-gray-400">Applications reelies demontrant mes competences en cloud, full stack et IA.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">Projets <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-500 italic" data-i18n="projects_title_accent">selectionnes.</span></h2>
+                    <p class="text-gray-500 dark:text-gray-400" data-i18n="projects_desc">Applications reelies demontrant mes competences en cloud, full stack et IA.</p>
                 </div>
                 <a class="hidden md:flex items-center text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition group mt-6 md:mt-0 font-mono text-sm" href="https://github.com/MelvinTnd" target="_blank" rel="noopener noreferrer">
-                    Voir GitHub
+                    <span data-i18n="projects_github">Voir GitHub</span>
                     <span class="material-symbols-outlined ml-1 text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </a>
             </div>
@@ -302,7 +310,7 @@
                         <div class="absolute top-2 right-2 px-2 py-0.5 bg-purple-900/80 backdrop-blur-md text-purple-200 rounded text-[10px] font-mono font-bold">AI & MLOps</div>
                     </div>
                     <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-purple-400 transition font-mono">ArenaMind AI Dashboard</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-grow leading-relaxed">Dashboard analytique d'IA sportive avec predictions tactiques en temps reel, FastAPI et PyTorch.</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-grow leading-relaxed" data-i18n="project_arena_desc">Dashboard analytique d'IA sportive avec predictions tactiques en temps reel, FastAPI et PyTorch.</p>
                     <div class="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-gray-100 dark:border-gray-800">
                         <span class="text-[10px] font-mono px-2 py-0.5 bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 rounded">Next.js</span>
                         <span class="text-[10px] font-mono px-2 py-0.5 bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 rounded">FastAPI</span>
@@ -325,8 +333,8 @@
                         </div>
                         <div class="absolute top-2 right-2 px-2 py-0.5 bg-blue-900/80 backdrop-blur-md text-blue-200 rounded text-[10px] font-mono font-bold">Mobile & AI</div>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-400 transition font-mono">Eva - Assistant Vocal IA</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-grow leading-relaxed">Assistant Android intelligent avec commandes vocales, appels et reponses conversationnelles.</p>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-400 transition font-mono" data-i18n="project_eva_title">Eva - Assistant Vocal IA</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-grow leading-relaxed" data-i18n="project_eva_desc">Assistant Android intelligent avec commandes vocales, appels et reponses conversationnelles.</p>
                     <div class="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-gray-100 dark:border-gray-800">
                         <span class="text-[10px] font-mono px-2 py-0.5 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 rounded">Kotlin</span>
                         <span class="text-[10px] font-mono px-2 py-0.5 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 rounded">Android SDK</span>
@@ -345,7 +353,7 @@
                         <div class="absolute top-2 right-2 px-2 py-0.5 bg-red-900/80 backdrop-blur-md text-red-200 rounded text-[10px] font-mono font-bold">Full Stack</div>
                     </div>
                     <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-red-400 transition font-mono">BlackCine Admin</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-grow leading-relaxed">Plateforme d'administration pour le cinema africain. Gestion des medias, roles et videos.</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-grow leading-relaxed" data-i18n="project_blackcine_desc">Plateforme d'administration pour le cinema africain. Gestion des medias, roles et videos.</p>
                     <div class="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-gray-100 dark:border-gray-800">
                         <span class="text-[10px] font-mono px-2 py-0.5 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-300 rounded">Laravel</span>
                         <span class="text-[10px] font-mono px-2 py-0.5 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-300 rounded">React</span>
@@ -364,7 +372,7 @@
                         <div class="absolute top-2 right-2 px-2 py-0.5 bg-emerald-900/80 backdrop-blur-md text-emerald-200 rounded text-[10px] font-mono font-bold">Cloud & Web</div>
                     </div>
                     <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-emerald-400 transition font-mono">E-Commerce Microservices</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-grow leading-relaxed">Plateforme marchande reactive avec panier temps reel, paiements securises et Docker.</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-grow leading-relaxed" data-i18n="project_ecom_desc">Plateforme marchande reactive avec panier temps reel, paiements securises et Docker.</p>
                     <div class="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-gray-100 dark:border-gray-800">
                         <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-300 rounded">React</span>
                         <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-300 rounded">Laravel</span>
@@ -383,7 +391,7 @@
                         <div class="absolute top-2 right-2 px-2 py-0.5 bg-indigo-900/80 backdrop-blur-md text-indigo-200 rounded text-[10px] font-mono font-bold">SaaS Enterprise</div>
                     </div>
                     <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-indigo-400 transition font-mono">UpCompany SaaS</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-grow leading-relaxed">Plateforme de gestion d'entreprise et d'equipes avec outils analytiques et PostgreSQL.</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-grow leading-relaxed" data-i18n="project_up_desc">Plateforme de gestion d'entreprise et d'equipes avec outils analytiques et PostgreSQL.</p>
                     <div class="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-gray-100 dark:border-gray-800">
                         <span class="text-[10px] font-mono px-2 py-0.5 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-300 rounded">React</span>
                         <span class="text-[10px] font-mono px-2 py-0.5 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-300 rounded">Laravel</span>
@@ -400,8 +408,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-14">
                 <span class="text-primary font-mono font-bold tracking-wider uppercase text-sm mb-2 block">&lt; Certifications /&gt;</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">Certifications <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 italic">obtenues.</span></h2>
-                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">Formations completees qui valident mes competences en Cloud, DevOps, developpement web et IA.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">Certifications <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 italic" data-i18n="certs_title_accent">obtenues.</span></h2>
+                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto" data-i18n="certs_desc">Formations completees qui valident mes competences en Cloud, DevOps, developpement web et IA.</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -415,7 +423,7 @@
                     <div>
                         <span class="text-[10px] font-mono text-orange-400 font-bold uppercase tracking-wider">Amazon Web Services</span>
                         <h3 class="text-base font-bold text-gray-900 dark:text-white mt-1 font-mono">AWS Cloud Practitioner</h3>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">Fondamentaux AWS : EC2, S3, IAM, VPC, Lambda et services cloud essentiels.</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed" data-i18n="cert_aws_desc">Fondamentaux AWS : EC2, S3, IAM, VPC, Lambda et services cloud essentiels.</p>
                     </div>
                     <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100 dark:border-gray-800">
                         <span class="text-[10px] font-mono px-2 py-0.5 bg-orange-50 dark:bg-orange-900/20 text-orange-500 dark:text-orange-300 rounded">AWS</span>
@@ -433,7 +441,7 @@
                     <div>
                         <span class="text-[10px] font-mono text-blue-400 font-bold uppercase tracking-wider">Meta / Coursera</span>
                         <h3 class="text-base font-bold text-gray-900 dark:text-white mt-1 font-mono">Meta Front-End Developer</h3>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">React, JavaScript avance, UX/UI Design, responsive web et deploiement.</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed" data-i18n="cert_meta_desc">React, JavaScript avance, UX/UI Design, responsive web et deploiement.</p>
                     </div>
                     <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100 dark:border-gray-800">
                         <span class="text-[10px] font-mono px-2 py-0.5 bg-blue-50 dark:bg-blue-900/20 text-blue-500 dark:text-blue-300 rounded">React</span>
@@ -451,7 +459,7 @@
                     <div>
                         <span class="text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider">Google / Coursera</span>
                         <h3 class="text-base font-bold text-gray-900 dark:text-white mt-1 font-mono">Google UX Design</h3>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">Design thinking, wireframing, prototypage Figma et tests utilisateurs.</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed" data-i18n="cert_google_desc">Design thinking, wireframing, prototypage Figma et tests utilisateurs.</p>
                     </div>
                     <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100 dark:border-gray-800">
                         <span class="text-[10px] font-mono px-2 py-0.5 bg-amber-50 dark:bg-amber-900/20 text-amber-500 dark:text-amber-300 rounded">Figma</span>
@@ -469,7 +477,7 @@
                     <div>
                         <span class="text-[10px] font-mono text-purple-400 font-bold uppercase tracking-wider">IBM / Coursera</span>
                         <h3 class="text-base font-bold text-gray-900 dark:text-white mt-1 font-mono">IBM AI Engineering</h3>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">Machine Learning, Deep Learning avec PyTorch & Keras, deploiement de modeles.</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed" data-i18n="cert_ibm_desc">Machine Learning, Deep Learning avec PyTorch &amp; Keras, deploiement de modeles.</p>
                     </div>
                     <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100 dark:border-gray-800">
                         <span class="text-[10px] font-mono px-2 py-0.5 bg-purple-50 dark:bg-purple-900/20 text-purple-500 dark:text-purple-300 rounded">PyTorch</span>
@@ -487,7 +495,7 @@
                     <div>
                         <span class="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider">DeepLearning.AI</span>
                         <h3 class="text-base font-bold text-gray-900 dark:text-white mt-1 font-mono">LangChain & LangGraph for AI</h3>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">Agents autonomes, RAG pipelines, orchestration multi-agents et OpenAI.</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed" data-i18n="cert_langchain_desc">Agents autonomes, RAG pipelines, orchestration multi-agents et OpenAI.</p>
                     </div>
                     <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100 dark:border-gray-800">
                         <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-500 dark:text-emerald-300 rounded">LangChain</span>
@@ -505,7 +513,7 @@
                     <div>
                         <span class="text-[10px] font-mono text-indigo-400 font-bold uppercase tracking-wider">Udemy / freeCodeCamp</span>
                         <h3 class="text-base font-bold text-gray-900 dark:text-white mt-1 font-mono">Full Stack Web Development</h3>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">Architecture MERN, APIs REST, authentification JWT, Docker et CI/CD.</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed" data-i18n="cert_fs_desc">Architecture MERN, APIs REST, authentification JWT, Docker et CI/CD.</p>
                     </div>
                     <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100 dark:border-gray-800">
                         <span class="text-[10px] font-mono px-2 py-0.5 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-500 dark:text-indigo-300 rounded">MERN</span>
@@ -521,23 +529,23 @@
                 <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
                 <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
                     <div>
-                        <h3 class="text-xl font-bold font-mono mb-1">6 Certifications <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400 italic">validees.</span></h3>
-                        <p class="text-gray-400 text-sm">Chaque certification represente des centaines d'heures de pratique sur des projets reels.</p>
+                        <h3 class="text-xl font-bold font-mono mb-1">6 Certifications <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400 italic" data-i18n="banner_title_accent">validees.</span></h3>
+                        <p class="text-gray-400 text-sm" data-i18n="banner_desc">Chaque certification represente des centaines d'heures de pratique sur des projets reels.</p>
                     </div>
                     <div class="flex gap-8 text-center flex-shrink-0">
                         <div>
                             <div class="text-2xl font-bold text-primary font-mono">6+</div>
-                            <div class="text-[10px] text-gray-400 font-mono uppercase tracking-wider">Certifs</div>
+                            <div class="text-[10px] text-gray-400 font-mono uppercase tracking-wider" data-i18n="stat_certs_label">Certifs</div>
                         </div>
                         <div class="w-px bg-gray-700"></div>
                         <div>
                             <div class="text-2xl font-bold text-emerald-400 font-mono">3+</div>
-                            <div class="text-[10px] text-gray-400 font-mono uppercase tracking-wider">Ans Exp.</div>
+                            <div class="text-[10px] text-gray-400 font-mono uppercase tracking-wider" data-i18n="stat_exp_label">Ans Exp.</div>
                         </div>
                         <div class="w-px bg-gray-700"></div>
                         <div>
                             <div class="text-2xl font-bold text-purple-400 font-mono">15+</div>
-                            <div class="text-[10px] text-gray-400 font-mono uppercase tracking-wider">Projets</div>
+                            <div class="text-[10px] text-gray-400 font-mono uppercase tracking-wider" data-i18n="stat_projects_label">Projets</div>
                         </div>
                     </div>
                 </div>
@@ -554,29 +562,29 @@
                 <div class="space-y-8">
                     <div>
                         <span class="text-primary font-mono font-bold tracking-wider uppercase text-sm mb-2 block">&lt; Contact /&gt;</span>
-                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">Travaillons <span class="text-primary italic">ensemble.</span></h2>
-                        <p class="text-gray-500 dark:text-gray-400 max-w-md">Une idee de projet ? Une opportunite ? N'hesitez pas a me contacter.</p>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">Travaillons <span class="text-primary italic" data-i18n="contact_title_accent">ensemble.</span></h2>
+                        <p class="text-gray-500 dark:text-gray-400 max-w-md" data-i18n="contact_desc">Une idee de projet ? Une opportunite ? N'hesitez pas a me contacter.</p>
                     </div>
 
                     <div class="space-y-5">
                         <div class="flex items-center gap-4">
                             <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-primary text-lg">mail</span></div>
                             <div>
-                                <p class="text-xs text-gray-400 font-mono uppercase tracking-wider">Email</p>
+                                <p class="text-xs text-gray-400 font-mono uppercase tracking-wider" data-i18n="contact_email_label">Email</p>
                                 <a href="mailto:melvinyetonde@gmail.com" class="text-sm font-semibold text-gray-900 dark:text-white hover:text-primary transition">melvinyetonde@gmail.com</a>
                             </div>
                         </div>
                         <div class="flex items-center gap-4">
                             <div class="w-10 h-10 bg-indigo-500/10 rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-indigo-500 text-lg">location_on</span></div>
                             <div>
-                                <p class="text-xs text-gray-400 font-mono uppercase tracking-wider">Localisation</p>
-                                <p class="text-sm font-semibold text-gray-900 dark:text-white">Cotonou, Benin</p>
+                                <p class="text-xs text-gray-400 font-mono uppercase tracking-wider" data-i18n="contact_loc_label">Localisation</p>
+                                <p class="text-sm font-semibold text-gray-900 dark:text-white" data-i18n="contact_loc">Cotonou, Benin</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-4">
                             <div class="w-10 h-10 bg-emerald-500/10 rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-emerald-500 text-lg">call</span></div>
                             <div>
-                                <p class="text-xs text-gray-400 font-mono uppercase tracking-wider">Telephone</p>
+                                <p class="text-xs text-gray-400 font-mono uppercase tracking-wider" data-i18n="contact_phone_label">Telephone</p>
                                 <p class="text-sm font-semibold text-gray-900 dark:text-white">+229 01 91 68 02 76</p>
                             </div>
                         </div>
@@ -600,29 +608,29 @@
                     <form id="contactForm" class="space-y-5" onsubmit="sendContactForm(event)">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Nom</label>
-                                <input id="contactName" name="name" required class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="Votre nom" type="text" />
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5" data-i18n="form_name">Nom</label>
+                                <input id="contactName" name="name" required class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition" data-i18n-placeholder="form_name_ph" placeholder="Votre nom" type="text" />
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Email</label>
-                                <input id="contactEmail" name="email" required class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="votre@email.com" type="email" />
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5" data-i18n="form_email">Email</label>
+                                <input id="contactEmail" name="email" required class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition" data-i18n-placeholder="form_email_ph" placeholder="votre@email.com" type="email" />
                             </div>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Type de Projet</label>
-                            <select id="projectType" name="projectType" required class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition">
-                                <option value="">Selectionnez un type</option>
-                                <option>Application Web Full Stack</option>
-                                <option>Developpement d'API</option>
-                                <option>Consultation Technique</option>
-                                <option>Architecture Cloud / DevOps</option>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5" data-i18n="form_type">Type de Projet</label>
+                                <select id="projectType" name="projectType" required class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                                    <option value="" data-i18n="form_type_placeholder">Selectionnez un type</option>
+                                    <option data-i18n="form_type_1">Application Web Full Stack</option>
+                                    <option data-i18n="form_type_2">Developpement d'API</option>
+                                    <option data-i18n="form_type_3">Consultation Technique</option>
+                                    <option data-i18n="form_type_4">Architecture Cloud / DevOps</option>
                             </select>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Message</label>
-                            <textarea id="contactMessage" name="message" required class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="Decrivez votre projet..." rows="4"></textarea>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5" data-i18n="form_msg">Message</label>
+                                <textarea id="contactMessage" name="message" required class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition" data-i18n-placeholder="form_msg_ph" placeholder="Decrivez votre projet..." rows="4"></textarea>
                         </div>
-                        <button class="w-full py-3.5 bg-gray-900 dark:bg-primary text-white font-bold rounded-lg hover:bg-primary dark:hover:bg-primary-dark transition shadow-lg transform active:scale-95 font-mono text-sm" type="submit">
+                        <button class="w-full py-3.5 bg-gray-900 dark:bg-primary text-white font-bold rounded-lg hover:bg-primary dark:hover:bg-primary-dark transition shadow-lg transform active:scale-95 font-mono text-sm" type="submit" data-i18n="form_submit">
                             Envoyer le Message
                         </button>
                     </form>
@@ -636,7 +644,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="text-center md:text-left">
                 <span class="text-sm font-bold font-mono text-gray-900 dark:text-white">&lt;Melvin Yetonde /&gt;</span>
-                <p class="text-[11px] text-gray-400 mt-1">© 2026. Built with HTML & Tailwind CSS.</p>
+                <p class="text-[11px] text-gray-400 mt-1" data-i18n="footer_built">© 2026. Built with HTML & Tailwind CSS.</p>
             </div>
             <div class="flex items-center gap-1 text-[11px] text-gray-400 font-mono">
                 <span class="material-symbols-outlined text-[14px]">location_on</span>
