@@ -1,0 +1,27 @@
+{
+  "name": "portfolio-melvin-yetonde",
+  "version": "1.0.0",
+  "description": "Portfolio Full Stack Developer moderne et responsive de Melvin Yetonde",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "portfolio",
+    "fullstack",
+    "developer",
+    "react",
+    "laravel",
+    "benin"
+  ],
+  "author": "Melvin Yetonde",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "vite": "^5.2.0"
+  }
+}

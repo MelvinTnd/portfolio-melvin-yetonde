@@ -1,0 +1,650 @@
+﻿<!DOCTYPE html>
+<html class="scroll-smooth dark" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Melvin Yetonde - Full Stack Cloud & DevOps Engineer</title>
+
+    <meta name="description" content="Portfolio de Melvin Yetonde - Full Stack Cloud & DevOps Engineer. Specialise en AWS, Docker, Kubernetes, Terraform, Next.js, Laravel et Python." />
+    <meta name="keywords" content="Melvin Yetonde, Cloud Engineer, DevOps, Full Stack, AWS, Docker, Kubernetes, Terraform, Python, Next.js, Laravel, Cotonou, Benin" />
+    <meta name="author" content="Melvin Yetonde" />
+    <meta name="theme-color" content="#0F172A" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://github.com/MelvinTnd" />
+    <meta property="og:title" content="Melvin Yetonde - Full Stack Cloud & DevOps Engineer" />
+    <meta property="og:description" content="Cloud & DevOps Engineer specialise en AWS, Docker, Kubernetes, Terraform. Full Stack avec Next.js, Laravel et Python." />
+    <meta property="og:image" content="profile.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Melvin Yetonde - Full Stack Cloud & DevOps Engineer" />
+    <meta name="twitter:description" content="Cloud & DevOps Engineer specialise en AWS, Docker, Kubernetes, Terraform. Full Stack avec Next.js, Laravel et Python." />
+    <meta name="twitter:image" content="profile.jpg" />
+
+    <link rel="icon" type="image/jpeg" href="profile.jpg" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="./src/main.js" defer></script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 transition-colors duration-300 antialiased selection:bg-primary selection:text-white overflow-x-hidden">
+
+    <!-- Toast -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- ========== NAV ========== -->
+    <nav class="fixed top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a class="text-lg font-bold tracking-tight text-gray-900 dark:text-white font-mono" href="#">&lt;MY /&gt;</a>
+
+                <!-- Desktop -->
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a class="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition font-mono" href="#stack">STACK</a>
+                    <a class="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition font-mono" href="#projects">PROJETS</a>
+                    <a class="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition font-mono" href="#certifications">CERTIFS</a>
+                    <a class="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition font-mono" href="#contact">CONTACT</a>
+                    <button aria-label="Toggle dark mode" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 transition" onclick="toggleDarkMode()">
+                        <span id="darkModeIcon" class="material-symbols-outlined text-[20px]">light_mode</span>
+                    </button>
+                    <a class="px-5 py-2 text-sm font-bold text-white bg-gray-900 hover:bg-primary dark:bg-white dark:text-gray-900 dark:hover:bg-primary dark:hover:text-white rounded-lg transition-all duration-300 font-mono" href="#contact">Me Recruter</a>
+                </div>
+
+                <!-- Mobile -->
+                <div class="md:hidden flex items-center gap-2">
+                    <button class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400" onclick="toggleDarkMode()">
+                        <span class="material-symbols-outlined">dark_mode</span>
+                    </button>
+                    <button id="mobileMenuButton" class="p-2 text-gray-500 dark:text-gray-400" onclick="toggleMobileMenu()">
+                        <span id="menuIcon" class="material-symbols-outlined text-3xl">menu</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-gray-100 dark:border-gray-800 mt-2">
+                <div class="flex flex-col space-y-3 pt-4">
+                    <a class="text-sm font-medium text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition font-mono px-2 py-1" href="#stack" onclick="closeMobileMenu()">STACK</a>
+                    <a class="text-sm font-medium text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition font-mono px-2 py-1" href="#projects" onclick="closeMobileMenu()">PROJETS</a>
+                    <a class="text-sm font-medium text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition font-mono px-2 py-1" href="#certifications" onclick="closeMobileMenu()">CERTIFS</a>
+                    <a class="text-sm font-medium text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition font-mono px-2 py-1" href="#contact" onclick="closeMobileMenu()">CONTACT</a>
+                    <a class="mx-2 px-5 py-2.5 text-sm font-bold text-white bg-gray-900 hover:bg-primary dark:bg-white dark:text-gray-900 rounded-lg transition font-mono text-center" href="#contact" onclick="closeMobileMenu()">Me Recruter</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="relative w-full pt-28 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-background-light dark:bg-background-dark">
+        <div class="absolute inset-0 hero-pattern opacity-50 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 font-mono text-xs">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                        </span>
+                        <span class="font-semibold uppercase tracking-wider">Open to Work</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
+                        Full Stack <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500">Cloud & DevOps</span> Engineer.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-gray-500 dark:text-gray-400 max-w-lg leading-relaxed">
+                        Je conçois des infrastructures cloud scalables, automatise les deploiements et developpe des applications web performantes. Specialise en <strong class="text-gray-700 dark:text-gray-200">AWS, Docker, Kubernetes, Python, Next.js & Laravel</strong>.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                        <a class="inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-white bg-primary rounded-lg shadow-lg hover:bg-primary-dark hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 font-mono" href="#projects">
+                            Voir les Projets
+                            <span class="material-symbols-outlined ml-2 text-base">arrow_forward</span>
+                        </a>
+                        <a class="inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-gray-700 dark:text-white bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 font-mono" href="#contact">
+                            <span class="material-symbols-outlined mr-2 text-base">mail</span>
+                            Me Contacter
+                        </a>
+                    </div>
+
+                    <div class="pt-4 flex flex-wrap items-center gap-5 text-gray-400 dark:text-gray-500 border-t border-gray-200 dark:border-gray-800">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-indigo-400 text-lg">cloud</span>
+                            <span class="text-sm font-mono text-gray-700 dark:text-gray-300 font-semibold">Cloud & DevOps</span>
+                        </div>
+                        <div class="w-px h-4 bg-gray-200 dark:bg-gray-700"></div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-gray-900 dark:text-white text-lg">code</span>
+                            <span class="text-sm font-mono text-gray-700 dark:text-gray-300 font-semibold">3+ Ans Full Stack</span>
+                        </div>
+                        <div class="w-px h-4 bg-gray-200 dark:bg-gray-700"></div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-400 text-lg">verified</span>
+                            <span class="text-sm font-mono text-gray-700 dark:text-gray-300 font-semibold">6 Certifications</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo -->
+                <div class="relative lg:h-[500px] flex items-center justify-center lg:justify-end">
+                    <div class="relative w-full max-w-md aspect-square">
+                        <div class="absolute top-0 right-0 -mr-16 -mt-16 w-80 h-80 bg-blue-200 dark:bg-blue-900/30 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-70 animate-blob"></div>
+                        <div class="absolute bottom-0 left-0 -ml-16 -mb-16 w-80 h-80 bg-purple-500/20 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+                        <div class="relative z-10 w-full h-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800 transform rotate-2 hover:rotate-0 transition-transform duration-700 ease-out bg-surface-dark">
+                            <img alt="Melvin Yetonde" class="w-full h-full object-cover opacity-90" style="object-position: 60% 30%;" src="profile.jpg" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 right-6 text-white">
+                                <p class="font-mono text-xl font-bold">Melvin Yetonde</p>
+                                <p class="text-xs uppercase tracking-widest text-primary font-bold mt-1">Full Stack Cloud & DevOps Engineer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== STACK TECHNIQUE ========== -->
+    <section class="py-20 bg-surface-light dark:bg-background-dark" id="stack">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="text-primary font-mono font-bold tracking-wider uppercase text-sm mb-2 block">&lt; Stack /&gt;</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">Technologies <span class="text-primary italic">maitrisees.</span></h2>
+                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">Mon ecosysteme technique pour concevoir des architectures cloud, des applications full stack et des systemes intelligents.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Cloud & DevOps -->
+                <div class="glow-card group bg-white dark:bg-surface-dark p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-indigo-500/50 transition duration-300 shadow-sm flex flex-col gap-4">
+                    <div class="flex items-start justify-between">
+                        <div class="w-11 h-11 bg-indigo-500/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-indigo-500 text-xl">cloud</span></div>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-gray-900 dark:text-white font-mono">Cloud & DevOps</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">Infrastructure AWS, Docker, Kubernetes, Terraform, CI/CD automatises.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100 dark:border-gray-800">
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-500 dark:text-indigo-300 rounded">AWS</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-500 dark:text-indigo-300 rounded">Docker</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-500 dark:text-indigo-300 rounded">Kubernetes</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-500 dark:text-indigo-300 rounded">Terraform</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-500 dark:text-indigo-300 rounded">Linux</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-500 dark:text-indigo-300 rounded">GitHub Actions</span>
+                    </div>
+                </div>
+
+                <!-- Full Stack -->
+                <div class="glow-card group bg-white dark:bg-surface-dark p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-blue-500/50 transition duration-300 shadow-sm flex flex-col gap-4">
+                    <div class="flex items-start justify-between">
+                        <div class="w-11 h-11 bg-blue-500/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-blue-500 text-xl">code</span></div>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-gray-900 dark:text-white font-mono">Full Stack & Mobile</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">Applications web reactives et mobiles avec Next.js, Laravel et Node.js.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100 dark:border-gray-800">
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-blue-50 dark:bg-blue-900/20 text-blue-500 dark:text-blue-300 rounded">Next.js</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-blue-50 dark:bg-blue-900/20 text-blue-500 dark:text-blue-300 rounded">React</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-blue-50 dark:bg-blue-900/20 text-blue-500 dark:text-blue-300 rounded">Laravel</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-blue-50 dark:bg-blue-900/20 text-blue-500 dark:text-blue-300 rounded">Node.js</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-blue-50 dark:bg-blue-900/20 text-blue-500 dark:text-blue-300 rounded">Tailwind</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-blue-50 dark:bg-blue-900/20 text-blue-500 dark:text-blue-300 rounded">Flutter</span>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="glow-card group bg-white dark:bg-surface-dark p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-emerald-500/50 transition duration-300 shadow-sm flex flex-col gap-4">
+                    <div class="flex items-start justify-between">
+                        <div class="w-11 h-11 bg-emerald-500/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-emerald-500 text-xl">terminal</span></div>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-gray-900 dark:text-white font-mono">Langages & Data</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">Python avance, TypeScript, SQL, Bash et bases de donnees.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100 dark:border-gray-800">
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-500 dark:text-emerald-300 rounded">Python</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-500 dark:text-emerald-300 rounded">TypeScript</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-500 dark:text-emerald-300 rounded">PHP 8+</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-500 dark:text-emerald-300 rounded">SQL</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-500 dark:text-emerald-300 rounded">Bash</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-500 dark:text-emerald-300 rounded">PostgreSQL</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-500 dark:text-emerald-300 rounded">Redis</span>
+                    </div>
+                </div>
+
+                <!-- AI & Data -->
+                <div class="glow-card group bg-white dark:bg-surface-dark p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-purple-500/50 transition duration-300 shadow-sm flex flex-col gap-4">
+                    <div class="flex items-start justify-between">
+                        <div class="w-11 h-11 bg-purple-500/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-purple-500 text-xl">psychology</span></div>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-gray-900 dark:text-white font-mono">IA & Data</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">Deep Learning, agents autonomes, RAG et deploiement LLM.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100 dark:border-gray-800">
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-purple-50 dark:bg-purple-900/20 text-purple-500 dark:text-purple-300 rounded">PyTorch</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-purple-50 dark:bg-purple-900/20 text-purple-500 dark:text-purple-300 rounded">LangChain</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-purple-50 dark:bg-purple-900/20 text-purple-500 dark:text-purple-300 rounded">FastAPI</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-purple-50 dark:bg-purple-900/20 text-purple-500 dark:text-purple-300 rounded">Hugging Face</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-purple-50 dark:bg-purple-900/20 text-purple-500 dark:text-purple-300 rounded">OpenAI API</span>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="glow-card group bg-white dark:bg-surface-dark p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-amber-500/50 transition duration-300 shadow-sm flex flex-col gap-4">
+                    <div class="flex items-start justify-between">
+                        <div class="w-11 h-11 bg-amber-500/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-amber-500 text-xl">build</span></div>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-gray-900 dark:text-white font-mono">Outils & Design</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">Git, Figma, Postman, CI/CD et outils de productivite.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100 dark:border-gray-800">
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-amber-50 dark:bg-amber-900/20 text-amber-500 dark:text-amber-300 rounded">Git & GitHub</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-amber-50 dark:bg-amber-900/20 text-amber-500 dark:text-amber-300 rounded">Figma</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-amber-50 dark:bg-amber-900/20 text-amber-500 dark:text-amber-300 rounded">Postman</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-amber-50 dark:bg-amber-900/20 text-amber-500 dark:text-amber-300 rounded">Vite</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-amber-50 dark:bg-amber-900/20 text-amber-500 dark:text-amber-300 rounded">FFmpeg</span>
+                    </div>
+                </div>
+
+                <!-- Certifications Mini -->
+                <div class="glow-card group bg-white dark:bg-surface-dark p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-rose-500/50 transition duration-300 shadow-sm flex flex-col gap-4">
+                    <div class="flex items-start justify-between">
+                        <div class="w-11 h-11 bg-rose-500/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-rose-500 text-xl">school</span></div>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-gray-900 dark:text-white font-mono">Certifications</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">AWS Cloud Practitioner, Meta, Google, IBM AI, LangChain.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100 dark:border-gray-800">
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-rose-50 dark:bg-rose-900/20 text-rose-500 dark:text-rose-300 rounded">AWS CP</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-rose-50 dark:bg-rose-900/20 text-rose-500 dark:text-rose-300 rounded">Meta Front-End</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-rose-50 dark:bg-rose-900/20 text-rose-500 dark:text-rose-300 rounded">Google UX</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-rose-50 dark:bg-rose-900/20 text-rose-500 dark:text-rose-300 rounded">IBM AI</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJETS ========== -->
+    <section class="py-20 bg-white dark:bg-surface-dark border-t border-gray-100 dark:border-gray-800" id="projects">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-14">
+                <div class="max-w-xl">
+                    <span class="text-primary font-mono font-bold tracking-wider uppercase text-sm mb-2 block">&lt; Projets /&gt;</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">Projets <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-500 italic">selectionnes.</span></h2>
+                    <p class="text-gray-500 dark:text-gray-400">Applications reelies demontrant mes competences en cloud, full stack et IA.</p>
+                </div>
+                <a class="hidden md:flex items-center text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition group mt-6 md:mt-0 font-mono text-sm" href="https://github.com/MelvinTnd" target="_blank" rel="noopener noreferrer">
+                    Voir GitHub
+                    <span class="material-symbols-outlined ml-1 text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- ArenaMind -->
+                <div class="group glow-card bg-white dark:bg-surface-dark rounded-2xl p-6 border border-gray-100 dark:border-gray-800 hover:border-purple-500/50 transition duration-300 flex flex-col shadow-sm hover:shadow-xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 bg-purple-500/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-purple-500 text-xl">auto_awesome</span></div>
+                        <a class="text-gray-400 hover:text-purple-400 transition" href="https://github.com/MelvinTnd" target="_blank" aria-label="Code source"><span class="material-symbols-outlined text-lg">code</span></a>
+                    </div>
+                    <div class="mb-4 rounded-xl overflow-hidden relative aspect-video bg-gray-900">
+                        <img alt="ArenaMind AI Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="image/arenamind.png" loading="lazy" />
+                        <div class="absolute top-2 right-2 px-2 py-0.5 bg-purple-900/80 backdrop-blur-md text-purple-200 rounded text-[10px] font-mono font-bold">AI & MLOps</div>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-purple-400 transition font-mono">ArenaMind AI Dashboard</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-grow leading-relaxed">Dashboard analytique d'IA sportive avec predictions tactiques en temps reel, FastAPI et PyTorch.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-gray-100 dark:border-gray-800">
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 rounded">Next.js</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 rounded">FastAPI</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 rounded">PyTorch</span>
+                    </div>
+                </div>
+
+                <!-- Eva -->
+                <div class="group glow-card bg-white dark:bg-surface-dark rounded-2xl p-6 border border-gray-100 dark:border-gray-800 hover:border-blue-500/50 transition duration-300 flex flex-col shadow-sm hover:shadow-xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 bg-blue-500/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-blue-500 text-xl">mic</span></div>
+                        <a class="text-gray-400 hover:text-blue-400 transition" href="https://github.com/MelvinTnd/eva-assistant" target="_blank" aria-label="Code source"><span class="material-symbols-outlined text-lg">code</span></a>
+                    </div>
+                    <div class="mb-4 rounded-xl overflow-hidden relative aspect-video bg-gray-900 flex items-center justify-center p-4">
+                        <div class="text-center">
+                            <div class="w-14 h-14 rounded-full bg-blue-500/20 flex items-center justify-center mx-auto mb-2 animate-pulse">
+                                <span class="material-symbols-outlined text-blue-400 text-2xl">graphic_eq</span>
+                            </div>
+                            <span class="text-[10px] font-mono text-gray-400">Android AI Engine</span>
+                        </div>
+                        <div class="absolute top-2 right-2 px-2 py-0.5 bg-blue-900/80 backdrop-blur-md text-blue-200 rounded text-[10px] font-mono font-bold">Mobile & AI</div>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-400 transition font-mono">Eva - Assistant Vocal IA</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-grow leading-relaxed">Assistant Android intelligent avec commandes vocales, appels et reponses conversationnelles.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-gray-100 dark:border-gray-800">
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 rounded">Kotlin</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 rounded">Android SDK</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 rounded">Python API</span>
+                    </div>
+                </div>
+
+                <!-- BlackCine -->
+                <div class="group glow-card bg-white dark:bg-surface-dark rounded-2xl p-6 border border-gray-100 dark:border-gray-800 hover:border-red-500/50 transition duration-300 flex flex-col shadow-sm hover:shadow-xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 bg-red-500/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-red-500 text-xl">movie</span></div>
+                        <a class="text-gray-400 hover:text-red-400 transition" href="https://github.com/MelvinTnd" target="_blank" aria-label="Code source"><span class="material-symbols-outlined text-lg">code</span></a>
+                    </div>
+                    <div class="mb-4 rounded-xl overflow-hidden relative aspect-video bg-gray-900">
+                        <img alt="BlackCine Admin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="image/BlackcineAdmin.png" loading="lazy" />
+                        <div class="absolute top-2 right-2 px-2 py-0.5 bg-red-900/80 backdrop-blur-md text-red-200 rounded text-[10px] font-mono font-bold">Full Stack</div>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-red-400 transition font-mono">BlackCine Admin</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-grow leading-relaxed">Plateforme d'administration pour le cinema africain. Gestion des medias, roles et videos.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-gray-100 dark:border-gray-800">
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-300 rounded">Laravel</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-300 rounded">React</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-300 rounded">Tailwind</span>
+                    </div>
+                </div>
+
+                <!-- E-Commerce -->
+                <div class="group glow-card bg-white dark:bg-surface-dark rounded-2xl p-6 border border-gray-100 dark:border-gray-800 hover:border-emerald-500/50 transition duration-300 flex flex-col shadow-sm hover:shadow-xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 bg-emerald-500/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-emerald-500 text-xl">shopping_cart</span></div>
+                        <a class="text-gray-400 hover:text-emerald-400 transition" href="https://github.com/MelvinTnd" target="_blank" aria-label="Code source"><span class="material-symbols-outlined text-lg">code</span></a>
+                    </div>
+                    <div class="mb-4 rounded-xl overflow-hidden relative aspect-video bg-gray-900">
+                        <img alt="E-Commerce Microservices" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="image/Ecomerce.png" loading="lazy" />
+                        <div class="absolute top-2 right-2 px-2 py-0.5 bg-emerald-900/80 backdrop-blur-md text-emerald-200 rounded text-[10px] font-mono font-bold">Cloud & Web</div>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-emerald-400 transition font-mono">E-Commerce Microservices</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-grow leading-relaxed">Plateforme marchande reactive avec panier temps reel, paiements securises et Docker.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-gray-100 dark:border-gray-800">
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-300 rounded">React</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-300 rounded">Laravel</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-300 rounded">Docker</span>
+                    </div>
+                </div>
+
+                <!-- UpCompany -->
+                <div class="group glow-card bg-white dark:bg-surface-dark rounded-2xl p-6 border border-gray-100 dark:border-gray-800 hover:border-indigo-500/50 transition duration-300 flex flex-col shadow-sm hover:shadow-xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 bg-indigo-500/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-indigo-500 text-xl">domain</span></div>
+                        <a class="text-gray-400 hover:text-indigo-400 transition" href="https://github.com/MelvinTnd" target="_blank" aria-label="Code source"><span class="material-symbols-outlined text-lg">code</span></a>
+                    </div>
+                    <div class="mb-4 rounded-xl overflow-hidden relative aspect-video bg-gray-900">
+                        <img alt="UpCompany SaaS" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="image/upcompany.png" loading="lazy" />
+                        <div class="absolute top-2 right-2 px-2 py-0.5 bg-indigo-900/80 backdrop-blur-md text-indigo-200 rounded text-[10px] font-mono font-bold">SaaS Enterprise</div>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-indigo-400 transition font-mono">UpCompany SaaS</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-grow leading-relaxed">Plateforme de gestion d'entreprise et d'equipes avec outils analytiques et PostgreSQL.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-gray-100 dark:border-gray-800">
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-300 rounded">React</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-300 rounded">Laravel</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-300 rounded">PostgreSQL</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CERTIFICATIONS ========== -->
+    <section class="py-20 bg-background-light dark:bg-background-dark border-t border-gray-100 dark:border-gray-800" id="certifications">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="text-primary font-mono font-bold tracking-wider uppercase text-sm mb-2 block">&lt; Certifications /&gt;</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">Certifications <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 italic">obtenues.</span></h2>
+                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">Formations completees qui valident mes competences en Cloud, DevOps, developpement web et IA.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- AWS -->
+                <div class="glow-card group bg-white dark:bg-surface-dark p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-orange-500/50 transition duration-300 shadow-sm flex flex-col gap-4">
+                    <div class="flex items-start justify-between">
+                        <div class="w-12 h-12 bg-orange-500/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-orange-500 text-xl">cloud</span></div>
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full text-[10px] font-mono font-bold uppercase"><span class="material-symbols-outlined" style="font-size:12px">verified</span> Obtenu</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-mono text-orange-400 font-bold uppercase tracking-wider">Amazon Web Services</span>
+                        <h3 class="text-base font-bold text-gray-900 dark:text-white mt-1 font-mono">AWS Cloud Practitioner</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">Fondamentaux AWS : EC2, S3, IAM, VPC, Lambda et services cloud essentiels.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100 dark:border-gray-800">
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-orange-50 dark:bg-orange-900/20 text-orange-500 dark:text-orange-300 rounded">AWS</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-orange-50 dark:bg-orange-900/20 text-orange-500 dark:text-orange-300 rounded">EC2</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-orange-50 dark:bg-orange-900/20 text-orange-500 dark:text-orange-300 rounded">Lambda</span>
+                    </div>
+                </div>
+
+                <!-- Meta -->
+                <div class="glow-card group bg-white dark:bg-surface-dark p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-blue-500/50 transition duration-300 shadow-sm flex flex-col gap-4">
+                    <div class="flex items-start justify-between">
+                        <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-blue-500 text-xl">palette</span></div>
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full text-[10px] font-mono font-bold uppercase"><span class="material-symbols-outlined" style="font-size:12px">verified</span> Obtenu</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-mono text-blue-400 font-bold uppercase tracking-wider">Meta / Coursera</span>
+                        <h3 class="text-base font-bold text-gray-900 dark:text-white mt-1 font-mono">Meta Front-End Developer</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">React, JavaScript avance, UX/UI Design, responsive web et deploiement.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100 dark:border-gray-800">
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-blue-50 dark:bg-blue-900/20 text-blue-500 dark:text-blue-300 rounded">React</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-blue-50 dark:bg-blue-900/20 text-blue-500 dark:text-blue-300 rounded">JS</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-blue-50 dark:bg-blue-900/20 text-blue-500 dark:text-blue-300 rounded">Bootstrap</span>
+                    </div>
+                </div>
+
+                <!-- Google UX -->
+                <div class="glow-card group bg-white dark:bg-surface-dark p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-amber-500/50 transition duration-300 shadow-sm flex flex-col gap-4">
+                    <div class="flex items-start justify-between">
+                        <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-amber-500 text-xl">design_services</span></div>
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full text-[10px] font-mono font-bold uppercase"><span class="material-symbols-outlined" style="font-size:12px">verified</span> Obtenu</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider">Google / Coursera</span>
+                        <h3 class="text-base font-bold text-gray-900 dark:text-white mt-1 font-mono">Google UX Design</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">Design thinking, wireframing, prototypage Figma et tests utilisateurs.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100 dark:border-gray-800">
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-amber-50 dark:bg-amber-900/20 text-amber-500 dark:text-amber-300 rounded">Figma</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-amber-50 dark:bg-amber-900/20 text-amber-500 dark:text-amber-300 rounded">UX/UI</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-amber-50 dark:bg-amber-900/20 text-amber-500 dark:text-amber-300 rounded">Prototype</span>
+                    </div>
+                </div>
+
+                <!-- IBM AI -->
+                <div class="glow-card group bg-white dark:bg-surface-dark p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-purple-500/50 transition duration-300 shadow-sm flex flex-col gap-4">
+                    <div class="flex items-start justify-between">
+                        <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-purple-500 text-xl">psychology</span></div>
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full text-[10px] font-mono font-bold uppercase"><span class="material-symbols-outlined" style="font-size:12px">verified</span> Obtenu</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-mono text-purple-400 font-bold uppercase tracking-wider">IBM / Coursera</span>
+                        <h3 class="text-base font-bold text-gray-900 dark:text-white mt-1 font-mono">IBM AI Engineering</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">Machine Learning, Deep Learning avec PyTorch & Keras, deploiement de modeles.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100 dark:border-gray-800">
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-purple-50 dark:bg-purple-900/20 text-purple-500 dark:text-purple-300 rounded">PyTorch</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-purple-50 dark:bg-purple-900/20 text-purple-500 dark:text-purple-300 rounded">Keras</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-purple-50 dark:bg-purple-900/20 text-purple-500 dark:text-purple-300 rounded">ML</span>
+                    </div>
+                </div>
+
+                <!-- LangChain -->
+                <div class="glow-card group bg-white dark:bg-surface-dark p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-emerald-500/50 transition duration-300 shadow-sm flex flex-col gap-4">
+                    <div class="flex items-start justify-between">
+                        <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-emerald-500 text-xl">smart_toy</span></div>
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full text-[10px] font-mono font-bold uppercase"><span class="material-symbols-outlined" style="font-size:12px">verified</span> Obtenu</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider">DeepLearning.AI</span>
+                        <h3 class="text-base font-bold text-gray-900 dark:text-white mt-1 font-mono">LangChain & LangGraph for AI</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">Agents autonomes, RAG pipelines, orchestration multi-agents et OpenAI.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100 dark:border-gray-800">
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-500 dark:text-emerald-300 rounded">LangChain</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-500 dark:text-emerald-300 rounded">LangGraph</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-500 dark:text-emerald-300 rounded">RAG</span>
+                    </div>
+                </div>
+
+                <!-- Full Stack -->
+                <div class="glow-card group bg-white dark:bg-surface-dark p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-indigo-500/50 transition duration-300 shadow-sm flex flex-col gap-4">
+                    <div class="flex items-start justify-between">
+                        <div class="w-12 h-12 bg-indigo-500/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-indigo-500 text-xl">code</span></div>
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full text-[10px] font-mono font-bold uppercase"><span class="material-symbols-outlined" style="font-size:12px">verified</span> Obtenu</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-mono text-indigo-400 font-bold uppercase tracking-wider">Udemy / freeCodeCamp</span>
+                        <h3 class="text-base font-bold text-gray-900 dark:text-white mt-1 font-mono">Full Stack Web Development</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">Architecture MERN, APIs REST, authentification JWT, Docker et CI/CD.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100 dark:border-gray-800">
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-500 dark:text-indigo-300 rounded">MERN</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-500 dark:text-indigo-300 rounded">JWT</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-500 dark:text-indigo-300 rounded">Docker</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Banner -->
+            <div class="mt-12 bg-gradient-to-r from-gray-900 via-indigo-950 to-gray-900 text-white p-8 rounded-3xl shadow-2xl border border-indigo-900/50 relative overflow-hidden">
+                <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div>
+                        <h3 class="text-xl font-bold font-mono mb-1">6 Certifications <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400 italic">validees.</span></h3>
+                        <p class="text-gray-400 text-sm">Chaque certification represente des centaines d'heures de pratique sur des projets reels.</p>
+                    </div>
+                    <div class="flex gap-8 text-center flex-shrink-0">
+                        <div>
+                            <div class="text-2xl font-bold text-primary font-mono">6+</div>
+                            <div class="text-[10px] text-gray-400 font-mono uppercase tracking-wider">Certifs</div>
+                        </div>
+                        <div class="w-px bg-gray-700"></div>
+                        <div>
+                            <div class="text-2xl font-bold text-emerald-400 font-mono">3+</div>
+                            <div class="text-[10px] text-gray-400 font-mono uppercase tracking-wider">Ans Exp.</div>
+                        </div>
+                        <div class="w-px bg-gray-700"></div>
+                        <div>
+                            <div class="text-2xl font-bold text-purple-400 font-mono">15+</div>
+                            <div class="text-[10px] text-gray-400 font-mono uppercase tracking-wider">Projets</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="py-20 bg-surface-light dark:bg-surface-dark border-t border-gray-200 dark:border-gray-800" id="contact">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+                <!-- Info -->
+                <div class="space-y-8">
+                    <div>
+                        <span class="text-primary font-mono font-bold tracking-wider uppercase text-sm mb-2 block">&lt; Contact /&gt;</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">Travaillons <span class="text-primary italic">ensemble.</span></h2>
+                        <p class="text-gray-500 dark:text-gray-400 max-w-md">Une idee de projet ? Une opportunite ? N'hesitez pas a me contacter.</p>
+                    </div>
+
+                    <div class="space-y-5">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-primary text-lg">mail</span></div>
+                            <div>
+                                <p class="text-xs text-gray-400 font-mono uppercase tracking-wider">Email</p>
+                                <a href="mailto:melvinyetonde@gmail.com" class="text-sm font-semibold text-gray-900 dark:text-white hover:text-primary transition">melvinyetonde@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-indigo-500/10 rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-indigo-500 text-lg">location_on</span></div>
+                            <div>
+                                <p class="text-xs text-gray-400 font-mono uppercase tracking-wider">Localisation</p>
+                                <p class="text-sm font-semibold text-gray-900 dark:text-white">Cotonou, Benin</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-emerald-500/10 rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-emerald-500 text-lg">call</span></div>
+                            <div>
+                                <p class="text-xs text-gray-400 font-mono uppercase tracking-wider">Telephone</p>
+                                <p class="text-sm font-semibold text-gray-900 dark:text-white">+229 01 91 68 02 76</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <a class="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition" href="https://github.com/MelvinTnd" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+                        </a>
+                        <a class="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition" href="https://www.linkedin.com/in/size-melvin-yetonde-0a516a198" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <span class="font-bold text-sm font-mono">In</span>
+                        </a>
+                        <a class="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition" href="https://x.com/MelvinTnd" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formulaire -->
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-800">
+                    <form id="contactForm" class="space-y-5" onsubmit="sendContactForm(event)">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Nom</label>
+                                <input id="contactName" name="name" required class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="Votre nom" type="text" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Email</label>
+                                <input id="contactEmail" name="email" required class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="votre@email.com" type="email" />
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Type de Projet</label>
+                            <select id="projectType" name="projectType" required class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                                <option value="">Selectionnez un type</option>
+                                <option>Application Web Full Stack</option>
+                                <option>Developpement d'API</option>
+                                <option>Consultation Technique</option>
+                                <option>Architecture Cloud / DevOps</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Message</label>
+                            <textarea id="contactMessage" name="message" required class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="Decrivez votre projet..." rows="4"></textarea>
+                        </div>
+                        <button class="w-full py-3.5 bg-gray-900 dark:bg-primary text-white font-bold rounded-lg hover:bg-primary dark:hover:bg-primary-dark transition shadow-lg transform active:scale-95 font-mono text-sm" type="submit">
+                            Envoyer le Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="py-8 bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-center md:text-left">
+                <span class="text-sm font-bold font-mono text-gray-900 dark:text-white">&lt;Melvin Yetonde /&gt;</span>
+                <p class="text-[11px] text-gray-400 mt-1">© 2026. Built with HTML & Tailwind CSS.</p>
+            </div>
+            <div class="flex items-center gap-1 text-[11px] text-gray-400 font-mono">
+                <span class="material-symbols-outlined text-[14px]">location_on</span>
+                Cotonou, Benin
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
